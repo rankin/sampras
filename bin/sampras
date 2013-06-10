@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'commander/import'
+
+require 'sampras'
+require 'sampras/generators/application'
+
+program :version, '0.0.1'
+program :description, 'Faux API backend for front-end development'
+
+command :new do |c|
+  c.syntax = 'sampras new [options]'
+  c.summary = 'Create a new sampras project'
+  c.description = 'Creates a new sampras project directoy with the name provided'
+  c.example 'create project', 'sampras new app_api'
+	#c.option '--add', 'Add following route'
+
+  c.action do |args, options|
+    # Do something or c.when_called Sampras::Commands::Routes
+    Sampras::Generators::Application.start args
+  end
+end
+ 
+command :routes do |c|
+  c.syntax = 'sampras routes [options]'
+  c.summary = 'Manage routes for your API'
+  c.description = 'List, Add and Delete routes for your API'
+  c.example 'list all available routes', 'sampras routes'
+	c.example 'list GET routes', 'sampras routes --get'
+	c.example 'add a new route', 'samprass routes --add --get /api/v1/users'
+	c.example 'remove a route', 'samprass routes --rm --post /api/v1/users'
+	c.option '--add', 'Add following route'
+	c.option '--rm', 'Remove following route'
+  c.option '--get', 'Make route HTTP GET'
+	c.option '--put', 'Make route HTTP PUT'
+	c.option '--post', 'Make route HTTP POST'
+	c.option '--delete', 'Make route HTTP DELETE'
+	c.option '--match', 'Make rotue HTTP (GET|POST|PUT|DELETE)'
+
+  c.action do |args, options|
+    # Do something or c.when_called Sampras::Commands::Routes
+  end
+end
+

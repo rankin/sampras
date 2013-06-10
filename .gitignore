@@ -1,0 +1,11 @@
+.bundle/*
+test/tests.log
+.rvmrc
+*.gem
+*.rbc
+.config
+.yardoc
+Gemfile.lock
+_yardoc
+doc/
+pkg
