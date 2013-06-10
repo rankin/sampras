@@ -38,7 +38,7 @@ module Sampras
         template 'application.rb'
         template 'Rakefile'
         template 'index.html'
-        template '.sampras'
+        template 'sampras', '.sampras'
         
         empty_directory "public"
         empty_directory "public/javascripts"
