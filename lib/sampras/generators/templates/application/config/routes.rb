@@ -4,7 +4,7 @@ base = File.expand_path(File.dirname(__FILE__))
 HttpRouter.new do
   add('/').static("#{base}/index.html")
 
-  # serve
+  # serve static assets
   add('/stylesheets').static("#{base}/public/stylesheets")
   add('/javascripts').static("#{base}/public/javascripts")
 end
