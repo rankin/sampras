@@ -39,9 +39,10 @@ module Sampras
         template 'Rakefile'
         template 'index.html'
         template 'sampras', '.sampras'
-        
+
         empty_directory "public"
         empty_directory "public/javascripts"
+        empty_directory "public/stylesheets"
       end
 
       def create_config
