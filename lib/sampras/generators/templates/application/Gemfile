@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org'
 
 gem 'sampras', :git => 'git://github.com/rankin/sampras.git'
 
